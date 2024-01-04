@@ -48,7 +48,7 @@ public class StickerImageServiceImpl implements StickerImageService{
         for (int i=1;i<5;i++){
             num += probabilities[i-1];
             if(pivot <= num){
-                rank = i;
+                rank = i-1;
                 break;
             }
         }

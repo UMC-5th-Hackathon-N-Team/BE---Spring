@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/sticker")
+@CrossOrigin(origins = "http://localhost:3000")
 public class StickerController {
 
     private final StickerImageService stickerImageService;
