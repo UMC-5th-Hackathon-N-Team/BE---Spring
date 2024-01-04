@@ -27,4 +27,11 @@ public class User extends BaseEntity {
     private String blood;
 
     private Long draw;
+
+    private Integer merrit;
+
+    private Integer whole;
+
+    private Integer ingredient;
 }
+
