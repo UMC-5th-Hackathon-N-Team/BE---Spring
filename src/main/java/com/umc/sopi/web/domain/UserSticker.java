@@ -1,31 +1,26 @@
-package com.umc.sopi.apiPayload.domain;
+package com.umc.sopi.web.domain;
 
-import com.umc.sopi.apiPayload.domain.base.BaseEntity;
+import com.umc.sopi.web.domain.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class UserBlood extends BaseEntity {
+public class UserSticker extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String type;
-
-    private Long number;
-
-    private LocalDateTime date;
-
-    private String location;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "sticker_id")
+    private StickerImage image;
+
 }

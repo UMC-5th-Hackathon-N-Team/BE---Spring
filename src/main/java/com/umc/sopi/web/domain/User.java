@@ -1,6 +1,6 @@
-package com.umc.sopi.apiPayload.domain;
+package com.umc.sopi.web.domain;
 
-import com.umc.sopi.apiPayload.domain.base.BaseEntity;
+import com.umc.sopi.web.domain.base.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

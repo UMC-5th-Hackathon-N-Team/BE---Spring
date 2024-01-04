@@ -1,4 +1,4 @@
-package com.umc.sopi.apiPayload.domain.base;
+package com.umc.sopi.web.domain.base;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
