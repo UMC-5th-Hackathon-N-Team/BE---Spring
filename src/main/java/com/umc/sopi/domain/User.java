@@ -37,6 +37,8 @@ public class User extends BaseEntity {
 
     private String imageUri;
 
+    private Integer gender;
+
     public void wholeAdd(){
         this.whole += 1;
     }
