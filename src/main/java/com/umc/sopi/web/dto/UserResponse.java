@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class UserResponse {
     @Builder
@@ -14,5 +15,19 @@ public class UserResponse {
     @AllArgsConstructor
     public static class CountDTO{
         Long count;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MyPageDTO{
+        String name;
+        LocalDate birth;
+        String blood;
+        Integer merit;
+        Integer whole;
+        Integer ingredient;
+        String imageUri;
     }
 }
