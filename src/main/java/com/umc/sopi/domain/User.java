@@ -28,10 +28,21 @@ public class User extends BaseEntity {
 
     private Long draw;
 
-    private Integer merrit;
+    private Integer merit;
 
     private Integer whole;
 
     private Integer ingredient;
+
+    public void wholeAdd(){
+        this.whole += 1;
+    }
+
+    public void meritAdd(){
+        this.merit += 1;
+    }
+    public void ingredientAdd(){
+        this.ingredient += 1;
+    }
 }
 
