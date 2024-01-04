@@ -59,7 +59,7 @@ public class UserBloodServiceImpl implements UserBloodService {
     @Override
     public List<UserBlood> userBloodList(Long userId){
         Optional<User> user = userRepository.findById(userId);
-        List<UserBlood> toUserBloodList = userBloodRepository.findAllByUserOrderByDateAsc(user.get());
+        List<UserBlood> toUserBloodList = userBloodRepository.findAllByUser(user.get());
         return toUserBloodList;
     }
 
