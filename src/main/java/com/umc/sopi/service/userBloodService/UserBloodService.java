@@ -8,4 +8,6 @@ import java.util.List;
 public interface UserBloodService {
     UserBlood registerBlood(UserBloodRequest.RegisterDTO registerDTO);
     List<UserBlood> userBloodList(Long userId);
+
+    Long leftDayBlood(Long userId);
 }

@@ -42,4 +42,10 @@ public class UserBloodConverter {
         return UserBloodResponse.UserBloodListDTO.builder()
                 .userBloodList(reviewPreViewDTOList).build();
     }
+
+    public static UserBloodResponse.DayDTO dayDTO(Long left) {
+        return UserBloodResponse.DayDTO.builder()
+                .LeftDay(left)
+                .build();
+    }
 }
