@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,4 +63,21 @@ public class UserBloodServiceImpl implements UserBloodService {
         return toUserBloodList;
     }
 
+    @Override
+    public Long leftDayBlood(Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        List<UserBlood> dayList = userBloodRepository.findAllByUserOrderByDateAsc(user.get());
+        int idx = dayList.size() - 1; // 마지막 데이터
+        String type = dayList.get(idx).getType();
+        LocalDate left = dayList.get(idx).getDate();
+        LocalDate startDate = LocalDate.now();
+        Long days = ChronoUnit.DAYS.between(left, startDate);
+
+        if (type.equals("전혈")) {
+            days -= 56;
+        } else if (type.equals("성분")) {
+            days -= 14;
+        }
+        return days;
+    }
 }

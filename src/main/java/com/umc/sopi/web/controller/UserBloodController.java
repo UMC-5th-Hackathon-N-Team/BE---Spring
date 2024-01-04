@@ -28,4 +28,10 @@ public class UserBloodController {
         List<UserBlood> userBloodList = userBloodService.userBloodList(userId);
         return ApiResponse.onSuccess(UserBloodConverter.userBloodListDTO(userBloodList));
     }
+
+    @GetMapping("/left-day/{userId}")
+    public ApiResponse<UserBloodResponse.DayDTO> leftDay(@PathVariable(name = "userId") Long userId) {
+        Long days = userBloodService.leftDayBlood(userId);
+        return ApiResponse.onSuccess(UserBloodConverter.dayDTO(days));
+    }
 }
