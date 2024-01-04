@@ -1,5 +1,7 @@
 package com.umc.sopi.service.userService;
 
+import com.umc.sopi.domain.User;
+import com.umc.sopi.web.dto.UserRequestDTO;
 import com.umc.sopi.web.dto.UserResponse;
 
 public interface UserService {
@@ -10,4 +12,6 @@ public interface UserService {
     public Long getMerit();
     public Long getIngredient();
     public UserResponse.MyPageDTO myPage();
+
+    public User createUser(UserRequestDTO.UserDTO request);
 }

@@ -1,8 +1,10 @@
 package com.umc.sopi.service.userService.Impl;
 
+import com.umc.sopi.converter.UserConverter;
 import com.umc.sopi.domain.User;
 import com.umc.sopi.repository.UserRepository;
 import com.umc.sopi.service.userService.UserService;
+import com.umc.sopi.web.dto.UserRequestDTO;
 import com.umc.sopi.web.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -74,5 +76,11 @@ public class UserServiceImpl implements UserService {
                 .gender(user.getGender())
                 .build();
         return result;
+    }
+
+    @Override
+    public User createUser(UserRequestDTO.UserDTO request) {
+        User user = UserConverter.toUserDTO(request);
+        return userRepository.save(user);
     }
 }

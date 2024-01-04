@@ -28,9 +28,16 @@ public class UserResponse {
         Integer merit;
         Integer whole;
         Integer ingredient;
-        Integer gender;
+        String gender;
         String imageUrl;
+    }
 
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class userIdDTO {
+        Long id;
     }
 
 

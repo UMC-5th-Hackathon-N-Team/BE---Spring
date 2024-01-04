@@ -2,7 +2,9 @@ package com.umc.sopi.web.controller;
 
 import com.umc.sopi.apiPayload.ApiResponse;
 import com.umc.sopi.converter.UserConverter;
+import com.umc.sopi.domain.User;
 import com.umc.sopi.service.userService.UserService;
+import com.umc.sopi.web.dto.UserRequestDTO;
 import com.umc.sopi.web.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,13 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
     private final UserService userService;
+
+    @PostMapping ("/user")
+    public ApiResponse<UserResponse.userIdDTO> joinUser(@RequestBody UserRequestDTO.UserDTO request) {
+        User user = userService.createUser(request);
+        return ApiResponse.onSuccess(UserConverter.toJoinUserDTO(user));
+
+    }
 
     @GetMapping("/count/whole")
     public ApiResponse<UserResponse.CountDTO> getWhole(){
