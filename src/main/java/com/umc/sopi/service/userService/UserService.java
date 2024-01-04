@@ -11,7 +11,7 @@ public interface UserService {
     public Long getWhole();
     public Long getMerit();
     public Long getIngredient();
-    public UserResponse.MyPageDTO myPage();
+    public UserResponse.MyPageDTO myPage(Long userID);
 
     public User createUser(UserRequestDTO.UserDTO request);
 }

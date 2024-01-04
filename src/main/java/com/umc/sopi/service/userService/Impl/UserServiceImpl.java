@@ -60,8 +60,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponse.MyPageDTO myPage(){
-        User user = userRepository.findById(1L).orElseThrow(()->
+    public UserResponse.MyPageDTO myPage(Long userId){
+        User user = userRepository.findById(userId).orElseThrow(()->
                 new IllegalStateException("해당 유저가 존재하지 않습니다."));
 
         UserResponse.MyPageDTO result = UserResponse.MyPageDTO.builder()

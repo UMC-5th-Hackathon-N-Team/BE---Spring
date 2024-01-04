@@ -54,10 +54,13 @@ public class UserController {
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getIngredient() + userService.getWhole()));
     }
 
-    @GetMapping("/MyPage")
+    @GetMapping("/MyPage/{userId}")
     @Operation(summary = "마이페이지 조회 API", description = "마이페이지에 표시할 유저의 정보를 반환하는 API이다")
-    public ApiResponse<UserResponse.MyPageDTO> getMyPage(){
-        return ApiResponse.onSuccess(userService.myPage());
+    @Parameters({
+            @Parameter(name = "userId", description = "유저의 아이디를 path variable로 받는다.")
+    })
+    public ApiResponse<UserResponse.MyPageDTO> getMyPage(@PathVariable(name = "userId") Long userId){
+        return ApiResponse.onSuccess(userService.myPage(userId));
 
     }
 }
