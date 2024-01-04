@@ -31,7 +31,7 @@ public class UserBloodController {
 
     @GetMapping("/left-day/{userId}")
     public ApiResponse<UserBloodResponse.DayDTO> leftDay(@PathVariable(name = "userId") Long userId) {
-        Integer days = userBloodService.leftDayBlood(userId);
+        Long days = userBloodService.leftDayBlood(userId);
         return ApiResponse.onSuccess(UserBloodConverter.dayDTO(days));
     }
 }

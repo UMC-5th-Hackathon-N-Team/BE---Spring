@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,17 +65,14 @@ public class UserBloodServiceImpl implements UserBloodService {
     }
 
     @Override
-    public Integer leftDayBlood(Long userId) {
+    public Long leftDayBlood(Long userId) {
         Optional<User> user = userRepository.findById(userId);
         List<UserBlood> dayList = userBloodRepository.findAllByUserOrderByDateAsc(user.get());
         int idx = dayList.size() - 1; // 마지막 데이터
-        String type = dayList.get(10).getType();
-        LocalDate left = dayList.get(10).getDate();
-        System.out.println("day: " + left);
-
-        Period period = Period.between(LocalDate.now(), left);
-        int days = period.getDays();
-        System.out.println("days: " + days);
+        String type = dayList.get(idx).getType();
+        LocalDate left = dayList.get(idx).getDate();
+        LocalDate startDate = LocalDate.now();
+        Long days = ChronoUnit.DAYS.between(left, startDate);
 
         if(type.equals("전혈")) {
             days -= 56;

@@ -43,7 +43,7 @@ public class UserBloodConverter {
                 .userBloodList(reviewPreViewDTOList).build();
     }
 
-    public static UserBloodResponse.DayDTO dayDTO(Integer left) {
+    public static UserBloodResponse.DayDTO dayDTO(Long left) {
         return UserBloodResponse.DayDTO.builder()
                 .LeftDay(left)
                 .build();

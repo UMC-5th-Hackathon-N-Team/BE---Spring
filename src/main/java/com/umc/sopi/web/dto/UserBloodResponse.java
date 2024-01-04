@@ -44,6 +44,6 @@ public class UserBloodResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class DayDTO {
-        Integer LeftDay;
+        Long LeftDay;
     }
 }

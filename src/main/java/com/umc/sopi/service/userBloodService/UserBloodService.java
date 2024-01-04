@@ -9,5 +9,5 @@ public interface UserBloodService {
     UserBlood registerBlood(UserBloodRequest.RegisterDTO registerDTO);
     List<UserBlood> userBloodList(Long userId);
 
-    Integer leftDayBlood(Long userId);
+    Long leftDayBlood(Long userId);
 }
