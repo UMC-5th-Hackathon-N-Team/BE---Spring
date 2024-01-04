@@ -1,4 +1,4 @@
-package com.umc.sopi.web.converter;
+package com.umc.sopi.converter;
 
 import com.umc.sopi.web.dto.TempResponse;
 

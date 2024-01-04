@@ -1,6 +1,6 @@
-package com.umc.sopi.web.domain;
+package com.umc.sopi.domain;
 
-import com.umc.sopi.web.domain.base.BaseEntity;
+import com.umc.sopi.domain.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
