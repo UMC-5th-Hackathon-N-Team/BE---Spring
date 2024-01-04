@@ -28,7 +28,8 @@ public class StickerImageServiceImpl implements StickerImageService{
         StickerImage image = stickerImageRepository.findById(stickerId).get();
         User user = userRepository.findById(userId).get();
         UserSticker userSticker = StickerConverter.toUserSticker(image, user);
-        userStickerRepository.save(userSticker);
+        if(userStickerRepository.findTopByUserAndImage(user, image) == null)
+            userStickerRepository.save(userSticker);
         return image;
     }
 
