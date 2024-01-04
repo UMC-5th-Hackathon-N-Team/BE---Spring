@@ -28,7 +28,7 @@ public class UserResponse {
         Integer merit;
         Integer whole;
         Integer ingredient;
-        Integer gender;
+        String gender;
         String imageUrl;
 
     }
