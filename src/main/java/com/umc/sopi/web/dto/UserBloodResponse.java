@@ -38,4 +38,12 @@ public class UserBloodResponse {
     public static class UserBloodListDTO{
         List<UserBloodResultDTO> userBloodList;
     }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class DayDTO {
+        Integer LeftDay;
+    }
 }
