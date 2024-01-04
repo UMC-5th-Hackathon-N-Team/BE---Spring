@@ -3,6 +3,7 @@ package com.umc.sopi.service.userService.Impl;
 import com.umc.sopi.domain.User;
 import com.umc.sopi.repository.UserRepository;
 import com.umc.sopi.service.userService.UserService;
+import com.umc.sopi.web.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,5 +56,23 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(1L).orElseThrow(()->
                 new IllegalStateException("해당 유저가 존재하지 않습니다."));
         return user.getIngredient().longValue();
+    }
+
+    @Override
+    public UserResponse.MyPageDTO myPage(){
+        User user = userRepository.findById(1L).orElseThrow(()->
+                new IllegalStateException("해당 유저가 존재하지 않습니다."));
+
+        UserResponse.MyPageDTO result = UserResponse.MyPageDTO.builder()
+                .blood(user.getBlood())
+                .whole(user.getWhole())
+                .birth(user.getBirth())
+                .name(user.getName())
+                .merit(user.getMerit())
+                .ingredient(user.getIngredient())
+                .imageUri(user.getImageUri())
+                .build();
+
+        return result;
     }
 }

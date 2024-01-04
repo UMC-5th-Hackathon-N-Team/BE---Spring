@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -22,7 +23,7 @@ public class User extends BaseEntity {
 
     private String name;
 
-    private LocalDateTime birth;
+    private LocalDate birth;
 
     private String blood;
 
@@ -33,6 +34,8 @@ public class User extends BaseEntity {
     private Integer whole;
 
     private Integer ingredient;
+
+    private String imageUri;
 
     public void wholeAdd(){
         this.whole += 1;

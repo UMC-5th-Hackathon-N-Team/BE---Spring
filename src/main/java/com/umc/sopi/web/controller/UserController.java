@@ -9,27 +9,30 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/count")
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/whole")
+    @GetMapping("/count/whole")
     public ApiResponse<UserResponse.CountDTO> getWhole(){
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getWhole()));
     }
-    @GetMapping("/merit")
+    @GetMapping("/count/merit")
     public ApiResponse<UserResponse.CountDTO> getMerit(){
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getMerit()));
     }
-    @GetMapping("/ingredient")
+    @GetMapping("/count/ingredient")
     public ApiResponse<UserResponse.CountDTO> getIngredient(){
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getIngredient()));
     }
-    @GetMapping("/year")
+    @GetMapping("/count/year")
     public ApiResponse<UserResponse.CountDTO> getYear(){
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getIngredient() + userService.getWhole()));
     }
 
+    @GetMapping("/MyPage")
+    public ApiResponse<UserResponse.MyPageDTO> getMyPage(){
+        return ApiResponse.onSuccess(userService.myPage());
 
+    }
 }
