@@ -19,9 +19,9 @@ public class StickerController {
     private final StickerImageService stickerImageService;
     private final UserStickerService userStickerService;
 
-    @PostMapping("/draw/{stickerId}")
-    public ApiResponse<StickerResponseDTO.stickerResultDTO> stickerDraw(@PathVariable(name = "stickerId") Long stickerId,
-                                                                        @RequestParam(name = "userId") Long userId) {
+    @PostMapping("/draw")
+    public ApiResponse<StickerResponseDTO.stickerResultDTO> stickerDraw(@RequestParam(name = "userId") Long userId) {
+        Long stickerId = stickerImageService.getRamdomStickerId();
         StickerImage image = stickerImageService.addSticker(stickerId, userId);
         return ApiResponse.onSuccess(StickerConverter.toStickerDTO(image));
     }
