@@ -60,4 +60,5 @@ public class UserBloodServiceImpl implements UserBloodService {
         List<UserBlood> toUserBloodList = userBloodRepository.findAllByUser(user.get());
         return toUserBloodList;
     }
+
 }
