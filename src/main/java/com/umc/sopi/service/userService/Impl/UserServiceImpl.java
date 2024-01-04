@@ -70,10 +70,9 @@ public class UserServiceImpl implements UserService {
                 .name(user.getName())
                 .merit(user.getMerit())
                 .ingredient(user.getIngredient())
-                .imageUri(user.getImageUri())
+                .imageUrl(user.getImageUrl())
                 .gender(user.getGender())
                 .build();
-
         return result;
     }
 }

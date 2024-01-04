@@ -29,6 +29,9 @@ public class UserResponse {
         Integer whole;
         Integer ingredient;
         Integer gender;
-        String imageUri;
+        String imageUrl;
+
     }
+
+
 }
