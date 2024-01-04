@@ -23,4 +23,9 @@ public class TempRestController {
     public String healthChck() {
         return "health check!";
     }
+
+    @GetMapping("/test2")
+    public String test2() {
+        return "test2";
+    }
 }
