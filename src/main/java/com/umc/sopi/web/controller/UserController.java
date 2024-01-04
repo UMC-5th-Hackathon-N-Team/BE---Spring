@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     private final UserService userService;
-    private final UserBloodService userBloodService;
+
     @GetMapping("/whole")
     public ApiResponse<UserResponse.CountDTO> getWhole(){
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getWhole()));
@@ -36,9 +36,5 @@ public class UserController {
         return ApiResponse.onSuccess(UserConverter.toCountResultDTO(userService.getIngredient() + userService.getWhole()));
     }
 
-    @PostMapping("/bloodcard")
-    public ApiResponse<UserBloodResponse.RegisterUserBloodResultDTO> createReview(@RequestBody UserBloodRequest.RegisterDTO request){
-        UserBlood userBlood = userBloodService.registerBlood(request);
-        return ApiResponse.onSuccess(UserBloodConverter.toRegisterUserBloodResultDTO(userBlood));
-    }
+
 }

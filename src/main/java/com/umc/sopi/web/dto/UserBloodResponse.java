@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class UserBloodResponse {
     @Builder
@@ -19,5 +20,22 @@ public class UserBloodResponse {
         String location;
     }
 
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class UserBloodResultDTO{
+        String type;
+        Long number;
+        LocalDate date;
+        String location;
+    }
 
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class UserBloodListDTO{
+        List<UserBloodResultDTO> userBloodList;
+    }
 }
