@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ?? ??? ????
+    url: jdbc:mysql://elliedb.cig2pf2l0lno.ap-northeast-2.rds.amazonaws.com:3306/umc_5th_Nteam
     username: root
-    password: ?? ??? ????
+    password: rootdb2457
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
