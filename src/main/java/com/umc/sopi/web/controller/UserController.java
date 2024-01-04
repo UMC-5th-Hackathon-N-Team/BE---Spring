@@ -1,13 +1,8 @@
 package com.umc.sopi.web.controller;
 
 import com.umc.sopi.apiPayload.ApiResponse;
-import com.umc.sopi.converter.UserBloodConverter;
 import com.umc.sopi.converter.UserConverter;
-import com.umc.sopi.domain.UserBlood;
-import com.umc.sopi.service.userBloodService.UserBloodService;
 import com.umc.sopi.service.userService.UserService;
-import com.umc.sopi.web.dto.UserBloodRequest;
-import com.umc.sopi.web.dto.UserBloodResponse;
 import com.umc.sopi.web.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

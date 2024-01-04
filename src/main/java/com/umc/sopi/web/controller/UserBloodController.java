@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/bloodcard")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserBloodController {
     private final UserBloodService userBloodService;
     @PostMapping("/")

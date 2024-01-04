@@ -7,13 +7,10 @@ import com.umc.sopi.repository.UserBloodRepository;
 import com.umc.sopi.repository.UserRepository;
 import com.umc.sopi.service.userBloodService.UserBloodService;
 import com.umc.sopi.web.dto.UserBloodRequest;
-import com.umc.sopi.web.dto.UserBloodResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 

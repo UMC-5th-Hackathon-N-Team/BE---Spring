@@ -1,7 +1,7 @@
 package com.umc.sopi.web.controller;
 
-import com.umc.sopi.Service.StickerImageService.StickerImageService;
-import com.umc.sopi.Service.UserStickerService.UserStickerService;
+import com.umc.sopi.service.StickerImageService.StickerImageService;
+import com.umc.sopi.service.UserStickerService.UserStickerService;
 import com.umc.sopi.apiPayload.ApiResponse;
 import com.umc.sopi.converter.StickerConverter;
 import com.umc.sopi.domain.StickerImage;

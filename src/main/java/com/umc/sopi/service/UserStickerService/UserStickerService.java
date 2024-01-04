@@ -1,4 +1,4 @@
-package com.umc.sopi.Service.UserStickerService;
+package com.umc.sopi.service.UserStickerService;
 
 import com.umc.sopi.domain.StickerImage;
 

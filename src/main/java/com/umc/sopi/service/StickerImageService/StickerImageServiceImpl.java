@@ -1,4 +1,4 @@
-package com.umc.sopi.Service.StickerImageService;
+package com.umc.sopi.service.StickerImageService;
 
 import com.umc.sopi.converter.StickerConverter;
 import com.umc.sopi.domain.StickerImage;
@@ -8,16 +8,10 @@ import com.umc.sopi.repository.StickerImageRepository;
 import com.umc.sopi.repository.UserRepository;
 import com.umc.sopi.repository.UserStickerRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
-
-import static com.fasterxml.jackson.databind.cfg.CoercionInputShape.Array;
 
 @Service
 @RequiredArgsConstructor
