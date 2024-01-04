@@ -12,6 +12,7 @@ public class StickerConverter {
 
     public static StickerResponseDTO.stickerResultDTO toStickerDTO(StickerImage image) {
         return StickerResponseDTO.stickerResultDTO.builder()
+                .name(image.getName())
                 .imageUrl(image.getUrl())
                 .build();
     }

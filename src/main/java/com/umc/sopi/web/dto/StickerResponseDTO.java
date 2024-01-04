@@ -15,6 +15,7 @@ public class StickerResponseDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class stickerResultDTO {
+        String name;
         String imageUrl;
     }
 
