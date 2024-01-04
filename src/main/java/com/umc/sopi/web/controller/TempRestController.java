@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/temp")
 @RequiredArgsConstructor
 public class TempRestController {
 
@@ -17,5 +16,10 @@ public class TempRestController {
     public ApiResponse<TempResponse.TempTestDTO> testAPI(){
 
         return ApiResponse.onSuccess(TempConverter.toTempTestDTO());
+    }
+
+    @GetMapping("/health")
+    public String healthChck() {
+        return "health check!";
     }
 }
