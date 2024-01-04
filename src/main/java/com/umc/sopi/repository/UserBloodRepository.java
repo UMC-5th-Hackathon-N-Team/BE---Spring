@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UserBloodRepository extends JpaRepository<UserBlood, Long> {
-    //List<UserBlood> findAllByUser(User user);
+    List<UserBlood> findAllByUser(User user);
 
     List<UserBlood> findAllByUserOrderByDateAsc(User user);
 }
